@@ -1,8 +1,13 @@
+from tabnanny import verbose
 from django.db import models
 
 class Gallery(models.Model):
     """Model representing a gallery of images"""
     gallery_name = models.CharField(max_length=40)
+
+    class Meta:
+        verbose_name='Gallery'
+        verbose_name_plural='Galleries'
 
     def __str__(self):
         """string for representing the Model object"""
