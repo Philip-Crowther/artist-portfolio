@@ -15,8 +15,8 @@ def gallery(request, gallery_name):
     images = gallery.image_set.all()
 
     context = {
-        gallery_name: gallery_name,
-        images: images
+        'gallery_name': gallery_name,
+        'images': images
     }
 
     return render(request, 'gallery.html', context)
