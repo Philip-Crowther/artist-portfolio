@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from tabnanny import verbose
 from django.db import models
 
@@ -16,7 +17,7 @@ class Gallery(models.Model):
         
 class Image(models.Model):
     """Model representing a particular image/work of art"""
-    image = models.ImageField()
+    image = models.ImageField(upload_to='images')
     title = models.CharField(max_length=30)
     gallery = models.ForeignKey('Gallery', on_delete=models.CASCADE)
 
